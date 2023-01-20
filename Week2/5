@@ -1,0 +1,23 @@
+file_path = './data-01-test-score.csv'
+
+class ReadCSV():
+
+    def __init__(self, file_path):
+        self.file_path = file_path
+        self.data_list = []
+
+    def read_file(self):
+        with open(self.file_path, 'r', encoding='utf-8') as f:
+            lines = f.readlines()
+            for line in lines:
+                num_list = [int(num) for num in line.strip().split(',')]    # 컴프리헨션을 통해 타입변환과 for문을 간결하게 표현
+                self.data_list.append(num_list)
+        return self.data_list
+
+    def merge_list(self):
+        return sorted([sum(row)/len(row) for row in self.data_list])    # sorted 를 통해 정렬 ( 기본값 오름차순 )
+
+
+read_csv = ReadCSV(file_path)
+print(read_csv.read_file())
+print(read_csv.merge_list())
