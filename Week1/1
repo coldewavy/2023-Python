@@ -1,0 +1,21 @@
+num_list = [1, 5, 7, 15, 16, 22, 28, 29]
+
+# for, if문 사용
+def get_odd_num(num_list):
+    output = []
+    for item in num_list:
+        if (item % 2) == 1 :    # 나머지로 홀수 판단
+            output.append(item) # output 리스트에 원소 추가
+    return output               # 값 반환
+
+print(get_odd_num(num_list))
+
+# 리스트컴프리헨션
+def get_odd_num1(num_list):
+    output = [item for item in num_list if item % 2 == 1]
+    return output
+
+print(get_odd_num1(num_list))
+
+# 리스트컴프리헨션 특징
+# 간결함, 배열생성의 유용성, 실행속도 빠름, 가독성이 떨어짐
