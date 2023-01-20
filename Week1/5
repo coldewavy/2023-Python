@@ -1,0 +1,16 @@
+inputs = "cat32dog16cow5"
+
+def find_string(inputs):
+    list =[]
+    word =[]
+    for i in range(len(inputs)):
+        if str.isdigit(inputs[i]) == False:
+            word += inputs[i]
+        else:
+            if len(word) != 0:
+                list.append(''.join(word))
+                word = []
+    return list
+
+string_list = find_string(inputs)
+print(string_list)
