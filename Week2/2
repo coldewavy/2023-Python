@@ -1,0 +1,14 @@
+#2
+
+class Car():    # 부모 클래스
+    def __init__(self, fuel, wheels):
+        self.fuel = fuel
+        self.wheels = wheels
+
+class Bike(Car):    # 자식 클랙스 ( 상속할 부모 클래스를 괄호 내 적음 )
+    def __init__(self,fuel,wheels,size):
+        super().__init__(fuel,wheels)   # 부모 클래스에서 fuel, wheels 메소드를 가져옴
+        self.size = size
+
+bike = Bike("gas", 2, "small")
+print(bike.fuel, bike.wheels, bike.size)
