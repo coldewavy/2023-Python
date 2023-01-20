@@ -1,0 +1,8 @@
+file_path = './data-01-test-score.csv'
+
+def read_file(file_path):
+    with open(file_path,'r',encoding='utf-8') as f:     # with open 을 통해 close를 통해
+        data_list = [[num for num in line.strip().split(',')] for line in f]    # 2중 컴프리헨션을 통해 구현
+    return data_list
+
+print(read_file(file_path))
