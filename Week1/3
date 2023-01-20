@@ -1,0 +1,11 @@
+score = [(100, 100), (95, 90), (55, 60), (75, 80), (70, 70)]
+
+def get_avg(score):
+    for i in range(len(score)):
+        score_list = list(score[i])
+        sum = score_list[0] + score_list[1]
+        avg = sum / 2
+        print('%d 번, 평균 : %.1f'%(i+1,avg))
+    return
+
+print(get_avg(score))
