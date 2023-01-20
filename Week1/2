@@ -1,0 +1,24 @@
+sentence = 'way a is there will a is there Where'
+
+def reverse_sentence(sentence):
+    parser = sentence.split(' ')
+    output = ''
+    for word in parser[::-1]:
+        output += (' ' + word)
+    return output
+
+def reverse_sentence_2(sentence):
+    word = sentence.split(' ')
+    word.reverse()  # 역순으로 재배정
+    output = ' '.join(word)
+    return output
+
+def reverse_sentence_3(sentence):
+    word = sentence.split(' ')
+    word = word[::-1]  # 역순으로 재배정
+    output = ' '.join(word)  # 리스트구분을 빈칸으로 설정
+    return output
+
+print('string 연산 사용 : ' +reverse_sentence(sentence))
+print('reverse 사용 : ' + reverse_sentence_2(sentence))
+print('슬라이싱 사용 : ' + reverse_sentence_3(sentence))
